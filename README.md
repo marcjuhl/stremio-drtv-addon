@@ -7,7 +7,21 @@ A free, customizable **Stremio v4 Addon** that provides live streaming and on-de
 
 ---
 
-## ⚡ Free 1-Click Cloud Hosting (Community Deployment)
+## 🌐 Live GitHub Pages Addon (Zero Hosting Setup Required)
+
+This addon is live on **GitHub Pages**:
+
+- **Web Landing & 1-Click Install**: [https://marcjuhl.github.io/stremio-drtv-addon/](https://marcjuhl.github.io/stremio-drtv-addon/)
+- **Direct Manifest URL**:
+  ```text
+  https://marcjuhl.github.io/stremio-drtv-addon/manifest.json
+  ```
+
+*(Includes 1080p live streams with backup Akamai feeds for DR1, DR2, and DR Ramasjang. 100% serverless, zero maintenance).*
+
+---
+
+## ⚡ Full VOD & Authentication Cloud Hosting (Node.js)
 
 Because Stremio requires dynamic HTTP/HTTPS stream resolving and API proxying, you can host your own free 24/7 instance in less than 60 seconds on any free cloud host:
 
