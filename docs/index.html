@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DR TV Denmark - Stremio Addon (GitHub Pages Edition)</title>
+  <title>DR TV Denmark - Stremio Addon Configurator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #c41230;
+      --primary: #c41230; /* DR Red */
       --primary-hover: #a10e27;
       --bg-dark: #0f1115;
       --card-bg: #181b22;
       --card-border: #262b35;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
+      --input-bg: #0d0f13;
+      --input-border: #333a46;
       --radius: 12px;
     }
 
@@ -45,22 +47,28 @@
       border-radius: var(--radius);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header {
       text-align: center;
+      margin-bottom: 28px;
     }
 
     .logo-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 72px;
-      height: 72px;
+      width: 68px;
+      height: 68px;
       background: linear-gradient(135deg, #c41230 0%, #7d081b 100%);
-      border-radius: 20px;
+      border-radius: 18px;
       font-weight: 800;
-      font-size: 28px;
+      font-size: 26px;
       letter-spacing: -1px;
       color: #fff;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       box-shadow: 0 8px 24px rgba(196, 18, 48, 0.4);
     }
 
@@ -75,38 +83,76 @@
       color: var(--text-muted);
       font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 24px;
     }
 
-    .badge-pill {
-      display: inline-block;
-      padding: 6px 14px;
-      background: rgba(34, 197, 94, 0.15);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      color: #4ade80;
-      border-radius: 999px;
-      font-size: 12px;
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
       font-weight: 600;
-      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
     }
 
-    .features-list {
-      text-align: left;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--card-border);
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 13px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
       border-radius: 8px;
-      padding: 16px 20px;
+      color: var(--text-main);
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(196, 18, 48, 0.25);
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--primary);
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       margin-bottom: 24px;
     }
 
-    .features-list li {
-      list-style: none;
-      padding: 6px 0;
-      font-size: 14px;
+    .checkbox-label {
       display: flex;
       align-items: center;
       gap: 10px;
-      color: #e5e7eb;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-main);
+      cursor: pointer;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      accent-color: var(--primary);
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
     }
 
     .btn-group {
@@ -165,6 +211,7 @@
     }
 
     .footer {
+      text-align: center;
       margin-top: 28px;
       font-size: 12px;
       color: #6b7280;
@@ -179,18 +226,47 @@
 <body>
 
   <div class="container">
-    <div class="logo-badge">DR</div>
-    <h1>DR TV Denmark</h1>
-    <p class="subtitle">Danmarks Radio Live TV Addon for Stremio</p>
-    
-    <div class="badge-pill">⚡ 100% Free & Permanently Hosted on GitHub Pages</div>
+    <div class="header">
+      <div class="logo-badge">DR</div>
+      <h1>DR TV Denmark</h1>
+      <p class="subtitle">Customize your catalogs, channels, and optional account credentials for Stremio</p>
+    </div>
 
-    <ul class="features-list">
-      <li>📺 <strong>DR1</strong> - 1080p HLS Direkte + Backup Feed</li>
-      <li>📺 <strong>DR2</strong> - Dybdegående aktualitet & samfund</li>
-      <li>📺 <strong>DR Ramasjang</strong> - Børnenes favoritkanaler</li>
-      <li>🚀 Zero servers required - Works forever with no downtime</li>
-    </ul>
+    <div class="info-box">
+      🔒 <strong>Credentials Note:</strong> Logging in with your DR TV account is optional. It is used to access age-restricted programs or synchronize personalized streaming entitlements. Your settings are encoded directly in your personal Stremio manifest URL.
+    </div>
+
+    <div class="form-group">
+      <label for="email">DR TV Email (Optional)</label>
+      <input type="email" id="email" placeholder="name@example.dk">
+    </div>
+
+    <div class="form-group">
+      <label for="password">DR TV Password (Optional)</label>
+      <input type="password" id="password" placeholder="••••••••••••">
+    </div>
+
+    <div class="form-group">
+      <label>Included Channels & Features</label>
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="cat_live" checked>
+          Live TV Channels (DR1, DR2, DR Ramasjang)
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="cat_popular" checked>
+          Catalog: Populære Udsendelser
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="cat_newest" checked>
+          Catalog: Nyeste Udsendelser
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="pref_hls_backup" checked>
+          Include Akamai Fallback Streams (Increased Reliability)
+        </label>
+      </div>
+    </div>
 
     <div class="btn-group">
       <button class="btn btn-primary" id="btnInstall">
@@ -201,35 +277,72 @@
       </button>
     </div>
 
-    <div class="url-display" id="manifestUrlPreview">Loading manifest URL...</div>
+    <div class="url-display" id="manifestUrlPreview">Generating manifest link...</div>
 
     <div class="footer">
-      Source code available on <a href="https://github.com/marcjuhl/stremio-drtv-addon" target="_blank">GitHub</a>
+      Unofficial community addon for Stremio • Open source on <a href="https://github.com/marcjuhl/stremio-drtv-addon" target="_blank">GitHub</a>
     </div>
   </div>
 
   <script>
-    const manifestUrl = window.location.origin + window.location.pathname.replace(/\/$/, '') + '/manifest.json';
-    const preview = document.getElementById('manifestUrlPreview');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const catLive = document.getElementById('cat_live');
+    const catPop = document.getElementById('cat_popular');
+    const catNew = document.getElementById('cat_newest');
+    const backupStreams = document.getElementById('pref_hls_backup');
+    const manifestPreview = document.getElementById('manifestUrlPreview');
     const btnInstall = document.getElementById('btnInstall');
     const btnCopy = document.getElementById('btnCopy');
 
-    preview.textContent = manifestUrl;
+    function generateManifestUrl() {
+      const config = {
+        email: emailInput.value.trim() || undefined,
+        password: passwordInput.value || undefined,
+        catalogs: {
+          live: catLive.checked,
+          popular: catPop.checked,
+          newest: catNew.checked
+        },
+        backups: backupStreams.checked
+      };
+
+      const jsonStr = JSON.stringify(config);
+      const encodedConfig = btoa(unescape(encodeURIComponent(jsonStr)));
+      
+      const origin = window.location.origin;
+      const manifestUrl = `${origin}/${encodedConfig}/manifest.json`;
+      return manifestUrl;
+    }
+
+    function updatePreview() {
+      const url = generateManifestUrl();
+      manifestPreview.textContent = url;
+    }
+
+    [emailInput, passwordInput, catLive, catPop, catNew, backupStreams].forEach(el => {
+      el.addEventListener('input', updatePreview);
+      el.addEventListener('change', updatePreview);
+    });
 
     btnInstall.addEventListener('click', () => {
-      const stremioProtocol = manifestUrl.replace(/^https?:\/\//, 'stremio://');
-      window.location.href = stremioProtocol;
+      const manifestUrl = generateManifestUrl();
+      const stremioProtocolUrl = manifestUrl.replace(/^https?:\/\//, 'stremio://');
+      window.location.href = stremioProtocolUrl;
     });
 
     btnCopy.addEventListener('click', async () => {
+      const manifestUrl = generateManifestUrl();
       try {
         await navigator.clipboard.writeText(manifestUrl);
         btnCopy.textContent = '✅ Copied to Clipboard!';
         setTimeout(() => { btnCopy.textContent = '📋 Copy Manifest URL'; }, 2000);
       } catch (e) {
-        alert(manifestUrl);
+        alert('Manifest URL: ' + manifestUrl);
       }
     });
+
+    updatePreview();
   </script>
 </body>
 </html>
