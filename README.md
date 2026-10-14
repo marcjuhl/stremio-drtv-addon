@@ -1,16 +1,37 @@
-# 🇩🇰 DR TV Denmark - Stremio v4 Addon
+# 🇩🇰 DR TV Denmark - Stremio Addon
 
-A local, standalone **Stremio v4 Addon** that scrapes catalog items and streams content directly from **DR TV (Danmarks Radio)**, including live channels (DR1, DR2, DR Ramasjang) and on-demand programs with DR account authentication.
+[![CI](https://github.com/marcjuhl/stremio-drtv-addon/actions/workflows/ci.yml/badge.svg)](https://github.com/marcjuhl/stremio-drtv-addon/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A free, customizable **Stremio v4 Addon** that provides live streaming and on-demand content from **DR TV (Danmarks Radio)**. Includes an interactive web configurator so users can personalize catalogs, channels, and optional credentials directly from their browser.
 
 ---
 
-## 📺 Features
+## ⚡ Free 1-Click Cloud Hosting (Community Deployment)
 
-- **Live TV Channels**: Direkte streaming for **DR1**, **DR2**, and **DR Ramasjang** via authorized Akamai HLS Master streams (`.m3u8`).
-- **On-Demand Catalogs**: "Populære" and "Nyeste" catalogs dynamically mapped to DR TV's internal OTT backend (`isl.dr-massive.com` / `production-cdn.dr-massive.com`).
-- **DR TV Account Authentication**: Support for optional `DR_EMAIL` and `DR_PASSWORD` credentials to unlock personalized streams and avoid guest quotas.
-- **Session Caching**: Automatic disk persistence of authentication tokens (`.session_cache.json`) with proactive token expiration handling to prevent redundant logins.
-- **Failover & Resiliency**: Built-in fallback stream URLs and curated backup catalogues ensuring uninterrupted playback even if upstream endpoints throttle or adjust rate limits.
+Because Stremio requires dynamic HTTP/HTTPS stream resolving and API proxying, you can host your own free 24/7 instance in less than 60 seconds on any free cloud host:
+
+| Provider | Deployment Type | Free Tier | Setup Link |
+| :--- | :--- | :--- | :--- |
+| **Koyeb** | Docker / Node.js | Free 24/7 web service | [Deploy to Koyeb](https://app.koyeb.com/) |
+| **Render** | Web Service | Free tier available | [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/marcjuhl/stremio-drtv-addon) |
+| **Railway** | Docker / Node.js | Free trial / credits | [Deploy on Railway](https://railway.app/new) |
+| **Hugging Face Spaces** | Docker Space | 100% Free 24/7 | [Create Docker Space](https://huggingface.co/spaces) |
+
+Once deployed, your addon will be live at:
+```text
+https://your-app-name.koyeb.app/configure
+```
+
+---
+
+## 🎨 Interactive Web Configurator
+
+When users navigate to your deployed addon URL (or `http://localhost:7000/configure`), they get an interactive configuration interface allowing them to:
+
+1. **Toggle Catalogs**: Enable/disable Live TV, Populære, or Nyeste catalogs.
+2. **Set DR TV Credentials (Optional)**: Input personal `DR_EMAIL` and `DR_PASSWORD` to stream age-restricted or personalized content.
+3. **1-Click Stremio Install**: Click the **"Install Addon in Stremio"** button to register their custom manifest via `stremio://` protocol.
 
 ---
 
@@ -19,75 +40,39 @@ A local, standalone **Stremio v4 Addon** that scrapes catalog items and streams 
 ```text
 .
 ├── .env.example              # Environment variables template
-├── .gitignore                # Git ignore rules for node_modules, logs, and session cache
+├── .github/workflows/ci.yml  # Automated GitHub Actions test workflow
+├── Dockerfile                # Multi-stage container for 1-click cloud hosting
+├── server.js                 # Express server + dynamic Stremio Addon router
+├── index.js                  # App entry point
 ├── package.json              # Project dependencies and startup scripts
-├── server.js                 # Primary Stremio Addon server and handler definitions
-├── index.js                  # Entrypoint proxy
+├── public/
+│   └── configure.html        # Interactive web configurator UI
 ├── src/
-│   ├── auth.js               # DR TV Account login, anonymous SSO, and token cache manager
-│   ├── channels.js           # Static definitions and HLS streams for DR Live TV channels
+│   ├── auth.js               # DR TV login, Anonymous SSO, and session token caching
+│   ├── channels.js           # Verified Akamai HLS streams for DR live channels (DR1, DR2, Ramasjang)
 │   └── drtvService.js        # Catalog parser, meta resolvers, and HLS stream builders
-└── README.md                 # Setup and usage guide
+└── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## 💻 Local Development
 
-### 1. Prerequisites
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [Stremio Desktop App](https://www.stremio.com/)
-
-### 2. Install Dependencies
+### 1. Clone & Install
 ```bash
+git clone https://github.com/marcjuhl/stremio-drtv-addon.git
+cd stremio-drtv-addon
 npm install
 ```
 
-### 3. Configure Credentials (Optional)
-Copy `.env.example` to `.env`:
-```bash
-cp .env.example .env
-```
-
-Edit `.env` if you wish to provide your DR account credentials:
-```env
-PORT=7000
-DR_EMAIL=your-email@example.com
-DR_PASSWORD=your-secure-password
-SESSION_STORAGE_PATH=./.session_cache.json
-```
-*(If no credentials are provided, the addon automatically falls back to DR's Anonymous SSO session protocol and public Akamai feeds).*
-
-### 4. Run the Addon
+### 2. Run
 ```bash
 node server.js
-# Or using npm:
-npm start
 ```
 
-You should see:
-```text
-======================================================
-🇩🇰 DR TV Denmark Stremio Addon active on port 7000
-Manifest URL: http://127.0.0.1:7000/manifest.json
-Load this URL into Stremio: Settings -> Addons -> Add Addon
-======================================================
-```
-
----
-
-## 🔌 Installing into Stremio
-
-1. Open the **Stremio** desktop application.
-2. Click on the puzzle piece icon (**Add-ons**) on the top right.
-3. In the search box or the input field for custom addons, paste the manifest URL:
-   ```text
-   http://127.0.0.1:7000/manifest.json
-   ```
-4. Click **Install**.
-5. Navigate to **Discover** → select **TV Channels** or **Series** to browse **DR TV Denmark**!
+Open [http://localhost:7000/configure](http://localhost:7000/configure) in your browser to configure and test!
 
 ---
 
 ## 🌍 Geoblocking Note
-DR TV streams are geo-restricted to Denmark by Danmarks Radio. If you are accessing streams from outside Denmark, ensure your machine or home network uses a Danish IP address / VPN connection.
+Content streams from DR TV are geo-restricted to Denmark. When deploying to a cloud host (Render, Koyeb, etc.) or streaming locally, ensure traffic originates from a Danish IP or VPN.
