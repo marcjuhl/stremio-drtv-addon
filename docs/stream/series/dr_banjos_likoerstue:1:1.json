@@ -1,0 +1,9 @@
+{
+  "streams": [
+    {
+      "name": "DR TV",
+      "title": "Banjos Likørstue - Afsnit 1 (1080p HLS)",
+      "url": "https://drlivedrtvahls.akamaized.net/hls/live/2113613/drlivedrtva/master.m3u8"
+    }
+  ]
+}

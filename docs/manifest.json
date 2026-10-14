@@ -9,16 +9,22 @@
     "stream"
   ],
   "types": [
-    "tv"
+    "tv",
+    "series"
   ],
   "idPrefixes": [
-    "dr_live_"
+    "dr_"
   ],
   "catalogs": [
     {
       "type": "tv",
       "id": "dr_live",
       "name": "DR TV - Live TV"
+    },
+    {
+      "type": "series",
+      "id": "dr_popular",
+      "name": "DR TV - Populære Serier"
     }
   ],
   "behaviorHints": {

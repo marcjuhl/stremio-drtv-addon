@@ -21,9 +21,19 @@ export const LIVE_CHANNELS = [
     logo: 'https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Fdr2_logo_rgb.png&scaleAfter=crop&width=600&height=600',
     background: 'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=1280&q=80',
     type: 'tv',
-    streamUrl: 'https://drlivedr2hls.akamaized.net/hls/live/2113627/drlivedr2/master.m3u8',
-    fallbackStreamUrl: 'https://drlive02texthls.akamaized.net/hls/live/2014188/drlive02text/master.m3u8',
+    streamUrl: 'https://drlivedr2hls.akamaized.net/hls/live/2113623/drlivedr2/master.m3u8',
+    fallbackStreamUrl: 'https://drlivedrtvahls.akamaized.net/hls/live/2113613/drlivedrtva/master.m3u8',
     channelSlug: 'dr2'
+  },
+  {
+    id: 'dr_live_drtv',
+    name: 'DR TV Ekstra',
+    description: 'DR TV direkte kanal med udvalgte liveudsendelser og begivenheder.',
+    logo: 'https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Fdr1_logo_rgb.png&scaleAfter=crop&width=600&height=600',
+    background: 'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=1280&q=80',
+    type: 'tv',
+    streamUrl: 'https://drlivedrtvahls.akamaized.net/hls/live/2113613/drlivedrtva/master.m3u8',
+    channelSlug: 'drtv'
   },
   {
     id: 'dr_live_ramasjang',
@@ -32,8 +42,7 @@ export const LIVE_CHANNELS = [
     logo: 'https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Framasjang_logo_rgb.png&scaleAfter=crop&width=600&height=600',
     background: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1280&q=80',
     type: 'tv',
-    streamUrl: 'https://drliveramasjanghls.akamaized.net/hls/live/2113629/drliveramasjang/master.m3u8',
-    fallbackStreamUrl: 'https://drliveramasjangtexthls.akamaized.net/hls/live/2014190/drliveramasjangtext/master.m3u8',
+    streamUrl: 'https://drlivedrtvahls.akamaized.net/hls/live/2113613/drlivedrtva/master.m3u8',
     channelSlug: 'ramasjang'
   }
 ];

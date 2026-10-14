@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "id": "dr_banjos_likoerstue",
+    "type": "series",
+    "name": "Banjos Likørstue",
+    "poster": "https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=400&q=80",
+    "background": "https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=1280&q=80",
+    "logo": "https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=300&q=80",
+    "description": "Legendarisk dansk kult-satire på DR2 med Jan Elhøj, Simon Jul Jørgensen og Simon Kvamm. Mød bl.a. reporteren Kenned og skibskokken Pølle.",
+    "releaseInfo": "2001",
+    "genres": ["Satire", "Komedie", "Kult"],
+    "videos": [
+      {
+        "id": "dr_banjos_likoerstue:1:1",
+        "title": "Afsnit 1 - Kenned & Pølle",
+        "season": 1,
+        "episode": 1,
+        "released": "2001-01-10T20:00:00.000Z"
+      },
+      {
+        "id": "dr_banjos_likoerstue:1:2",
+        "title": "Afsnit 2 - Hasse & Mads Mikkelsen",
+        "season": 1,
+        "episode": 2,
+        "released": "2001-01-17T20:00:00.000Z"
+      }
+    ]
+  }
+}

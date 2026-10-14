@@ -1,0 +1,57 @@
+{
+  "metas": [
+    {
+      "id": "dr_banjos_likoerstue",
+      "type": "series",
+      "name": "Banjos Likørstue",
+      "poster": "https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=400&q=80",
+      "banner": "https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=1280&q=80",
+      "description": "Legendarisk dansk kult-satire på DR2 med Jan Elhøj, Simon Jul Jørgensen og Simon Kvamm. Mød bl.a. reporteren Kenned og skibskokken Pølle.",
+      "releaseInfo": "2001",
+      "genres": [
+        "Satire",
+        "Komedie",
+        "Kult"
+      ]
+    },
+    {
+      "id": "dr_matador",
+      "type": "series",
+      "name": "Matador",
+      "poster": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Fdr1_logo_rgb.png&scaleAfter=crop&width=400&height=600",
+      "banner": "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=1280&q=80",
+      "description": "Den elskede danske dramaserie om livet i Korsbæk fra 1929 til 1947 skabt af Erik Balling og Lise Nørgaard.",
+      "releaseInfo": "1978",
+      "genres": [
+        "Drama",
+        "Klassiker"
+      ]
+    },
+    {
+      "id": "dr_huset",
+      "type": "series",
+      "name": "Huset",
+      "poster": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Fdr1_logo_rgb.png&scaleAfter=crop&width=400&height=600",
+      "banner": "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=1280&q=80",
+      "description": "Dansk spændingsdramaserie om fire fængselsbetjente i et råt og nedslidt fængsel.",
+      "releaseInfo": "2023",
+      "genres": [
+        "Drama",
+        "Krimi"
+      ]
+    },
+    {
+      "id": "dr_gift_ved_foerste_blik",
+      "type": "series",
+      "name": "Gift ved første blik",
+      "poster": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Fdr1_logo_rgb.png&scaleAfter=crop&width=400&height=600",
+      "banner": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1280&q=80",
+      "description": "DRs store datingeksperiment hvor modige singler mødes for første gang ved alteret.",
+      "releaseInfo": "2024",
+      "genres": [
+        "Underholdning",
+        "Reality"
+      ]
+    }
+  ]
+}
