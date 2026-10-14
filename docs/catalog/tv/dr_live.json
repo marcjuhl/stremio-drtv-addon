@@ -1,0 +1,46 @@
+{
+  "metas": [
+    {
+      "id": "dr_live_dr1",
+      "type": "tv",
+      "name": "DR1",
+      "poster": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Fdr1_logo_rgb.png&scaleAfter=crop&width=600&height=600",
+      "posterShape": "square",
+      "banner": "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=1280&q=80",
+      "description": "DR1 er Danmarks førende nyheds- og aktualitetskanal, samt samlingspunkt for store begivenheder og underholdning.",
+      "genres": [
+        "Live TV",
+        "Nyheder",
+        "Public Service"
+      ]
+    },
+    {
+      "id": "dr_live_dr2",
+      "type": "tv",
+      "name": "DR2",
+      "poster": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Fdr2_logo_rgb.png&scaleAfter=crop&width=600&height=600",
+      "posterShape": "square",
+      "banner": "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=1280&q=80",
+      "description": "DR2 er Danmarks samfundskanal med dybdegående journalistik, debatter, dokumentarer og satire.",
+      "genres": [
+        "Live TV",
+        "Nyheder",
+        "Public Service"
+      ]
+    },
+    {
+      "id": "dr_live_ramasjang",
+      "type": "tv",
+      "name": "DR Ramasjang",
+      "poster": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Framasjang_logo_rgb.png&scaleAfter=crop&width=600&height=600",
+      "posterShape": "square",
+      "banner": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1280&q=80",
+      "description": "DR Ramasjang er DRs børneunivers for de 3-8 årige fyldt med leg, sjov, fantasi og musik.",
+      "genres": [
+        "Live TV",
+        "Børn",
+        "Underholdning"
+      ]
+    }
+  ]
+}

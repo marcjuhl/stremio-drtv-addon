@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "id": "dr_live_ramasjang",
+    "type": "tv",
+    "name": "DR Ramasjang",
+    "poster": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Framasjang_logo_rgb.png&scaleAfter=crop&width=600&height=600",
+    "posterShape": "square",
+    "background": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1280&q=80",
+    "logo": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Framasjang_logo_rgb.png&scaleAfter=crop&width=600&height=600",
+    "description": "DR Ramasjang er DRs børneunivers for de 3-8 årige fyldt med leg, sjov, fantasi og musik.",
+    "genres": ["Live TV", "Børn", "Underholdning"]
+  }
+}

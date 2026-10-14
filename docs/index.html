@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DR TV Denmark - Stremio Addon (GitHub Pages Edition)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c41230;
+      --primary-hover: #a10e27;
+      --bg-dark: #0f1115;
+      --card-bg: #181b22;
+      --card-border: #262b35;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 0%, #1f1418 0%, var(--bg-dark) 70%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 580px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      padding: 36px;
+      text-align: center;
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #c41230 0%, #7d081b 100%);
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -1px;
+      color: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(196, 18, 48, 0.4);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .features-list {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+
+    .features-list li {
+      list-style: none;
+      padding: 6px 0;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #e5e7eb;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(196, 18, 48, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .url-display {
+      margin-top: 20px;
+      padding: 12px;
+      background: #000;
+      border: 1px dashed var(--card-border);
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 12px;
+      word-break: break-all;
+      color: #70d6ff;
+      user-select: all;
+    }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo-badge">DR</div>
+    <h1>DR TV Denmark</h1>
+    <p class="subtitle">Danmarks Radio Live TV Addon for Stremio</p>
+    
+    <div class="badge-pill">⚡ 100% Free & Permanently Hosted on GitHub Pages</div>
+
+    <ul class="features-list">
+      <li>📺 <strong>DR1</strong> - 1080p HLS Direkte + Backup Feed</li>
+      <li>📺 <strong>DR2</strong> - Dybdegående aktualitet & samfund</li>
+      <li>📺 <strong>DR Ramasjang</strong> - Børnenes favoritkanaler</li>
+      <li>🚀 Zero servers required - Works forever with no downtime</li>
+    </ul>
+
+    <div class="btn-group">
+      <button class="btn btn-primary" id="btnInstall">
+        🚀 Install Addon in Stremio
+      </button>
+      <button class="btn btn-secondary" id="btnCopy">
+        📋 Copy Manifest URL
+      </button>
+    </div>
+
+    <div class="url-display" id="manifestUrlPreview">Loading manifest URL...</div>
+
+    <div class="footer">
+      Source code available on <a href="https://github.com/marcjuhl/stremio-drtv-addon" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <script>
+    const manifestUrl = window.location.origin + window.location.pathname.replace(/\/$/, '') + '/manifest.json';
+    const preview = document.getElementById('manifestUrlPreview');
+    const btnInstall = document.getElementById('btnInstall');
+    const btnCopy = document.getElementById('btnCopy');
+
+    preview.textContent = manifestUrl;
+
+    btnInstall.addEventListener('click', () => {
+      const stremioProtocol = manifestUrl.replace(/^https?:\/\//, 'stremio://');
+      window.location.href = stremioProtocol;
+    });
+
+    btnCopy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(manifestUrl);
+        btnCopy.textContent = '✅ Copied to Clipboard!';
+        setTimeout(() => { btnCopy.textContent = '📋 Copy Manifest URL'; }, 2000);
+      } catch (e) {
+        alert(manifestUrl);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "id": "org.stremio.drdk.pages",
+  "name": "DR TV Denmark (Live TV)",
+  "version": "1.0.0",
+  "description": "Direkte TV fra Danmarks Radio (DR1, DR2, DR Ramasjang) i 1080p HLS. Hosted 100% gratis på GitHub Pages.",
+  "resources": [
+    "catalog",
+    "meta",
+    "stream"
+  ],
+  "types": [
+    "tv"
+  ],
+  "idPrefixes": [
+    "dr_live_"
+  ],
+  "catalogs": [
+    {
+      "type": "tv",
+      "id": "dr_live",
+      "name": "DR TV - Live TV"
+    }
+  ],
+  "background": "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=1920&q=80",
+  "logo": "https://asset.dr.dk/imagescaler/?protocol=https&server=www.dr.dk&file=%2Fimages%2Fother%2F2020%2F01%2F09%2Fdr1_logo_rgb.png&scaleAfter=crop&width=300&height=300"
+}
