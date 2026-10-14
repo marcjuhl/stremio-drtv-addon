@@ -296,6 +296,9 @@
     const btnCopy = document.getElementById('btnCopy');
 
     function generateManifestUrl() {
+      const isGitHubPages = window.location.hostname.endsWith('github.io');
+      const repoPath = isGitHubPages ? '/stremio-drtv-addon' : '';
+      
       const config = {
         email: emailInput.value.trim() || undefined,
         password: passwordInput.value || undefined,
@@ -307,12 +310,18 @@
         backups: backupStreams.checked
       };
 
+      const origin = window.location.origin;
+
+      // On GitHub Pages (static), dynamic base64 URL routing cannot execute server-side code.
+      // Point directly to the static GitHub Pages manifest or include config as query param
+      if (isGitHubPages) {
+        return `${origin}${repoPath}/manifest.json`;
+      }
+
+      // Dynamic Node.js server route
       const jsonStr = JSON.stringify(config);
       const encodedConfig = btoa(unescape(encodeURIComponent(jsonStr)));
-      
-      const origin = window.location.origin;
-      const manifestUrl = `${origin}/${encodedConfig}/manifest.json`;
-      return manifestUrl;
+      return `${origin}/${encodedConfig}/manifest.json`;
     }
 
     function updatePreview() {
